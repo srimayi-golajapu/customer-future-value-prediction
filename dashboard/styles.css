@@ -1,0 +1,119 @@
+/* Dark Theme Styles for Streamlit Dashboard */
+
+/* Main container */
+.stApp {
+    background-color: #0e1117;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background-color: #1a1d24;
+    border-right: 1px solid #2d3139;
+}
+
+[data-testid="stSidebar"] [aria-label="Main"] {
+    background-color: #1a1d24;
+}
+
+/* Sidebar navigation */
+[data-testid="stSidebarNav"] {
+    background-color: #1a1d24;
+}
+
+[data-testid="stSidebarNav"] > ul {
+    background-color: #1a1d24;
+}
+
+[data-testid="stSidebarNav"] > ul > li {
+    background-color: #1a1d24;
+}
+
+[data-testid="stSidebarNav"] > ul > li > div {
+    background-color: #1a1d24;
+}
+
+/* Headers */
+h1, h2, h3 {
+    color: #ffffff;
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+/* Text */
+.stMarkdown {
+    color: #e0e0e0;
+}
+
+/* Metrics */
+[data-testid="stMetricValue"] {
+    color: #00d4ff;
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #a0a0a0;
+}
+
+/* Dataframes */
+.stDataFrame {
+    background-color: #1a1d24;
+    color: #e0e0e0;
+}
+
+/* Buttons */
+.stButton > button {
+    background-color: #00d4ff;
+    color: #0e1117;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.stButton > button:hover {
+    background-color: #00b8e6;
+}
+
+/* Selectbox */
+[data-testid="stSelectbox"] > div > div {
+    background-color: #1a1d24;
+    color: #e0e0e0;
+}
+
+/* Input */
+[data-testid="stTextInput"] > div > div > input {
+    background-color: #1a1d24;
+    color: #e0e0e0;
+}
+
+/* Plotly charts */
+.js-plotly-plot {
+    background-color: #1a1d24;
+}
+
+/* Streamlit default text color */
+p {
+    color: #e0e0e0;
+}
+
+/* Success message */
+.stSuccess {
+    background-color: #1a1d24;
+    color: #00ff88;
+}
+
+/* Info message */
+.stInfo {
+    background-color: #1a1d24;
+    color: #00d4ff;
+}
+
+/* Warning message */
+.stWarning {
+    background-color: #1a1d24;
+    color: #ffaa00;
+}
+
+/* Error message */
+.stError {
+    background-color: #1a1d24;
+    color: #ff4444;
+}
