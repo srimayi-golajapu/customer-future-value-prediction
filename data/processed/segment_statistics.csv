@@ -1,0 +1,7 @@
+segment,Avg Predicted Revenue,Median Predicted Revenue,Total Predicted Revenue,Avg Historical Revenue,Avg Recency,Avg Cancellation Rate,Count
+Growing Customer,1734.8,1162.4,643609.44,4152.17,29.4,0.0,371
+High Future Value,3047.46,2081.87,722247.94,7719.44,20.31,0.0,237
+High Value At Risk,1927.1,1552.15,36614.93,5207.84,74.53,0.0,19
+Low Activity,900.37,695.43,393462.0,1580.78,201.86,0.0,437
+Low Future Value,220.45,227.8,220674.22,779.22,151.61,0.0,1001
+Medium Future Value,750.47,716.28,327953.28,2110.13,33.55,0.0,437

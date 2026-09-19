@@ -36,10 +36,10 @@ ENV/
 data/raw/*.xlsx
 data/raw/*.xls
 data/raw/*.csv
-data/processed/*.csv
+# data/processed/*.csv  # Commented out to include processed data for deployment
 
 # Models
-models/*.pkl
+# models/*.pkl  # Commented out to include models for deployment
 models/*.json
 models/*.joblib
 
