@@ -2,70 +2,87 @@
 
 /* Main container */
 .stApp {
-    background-color: #0e1117;
+    background-color: #0f1115;
 }
 
 /* Sidebar */
 [data-testid="stSidebar"] {
-    background-color: #1a1d24;
-    border-right: 1px solid #2d3139;
+    background-color: #161920;
+    border-right: 1px solid #2a2e36;
 }
 
 [data-testid="stSidebar"] [aria-label="Main"] {
-    background-color: #1a1d24;
+    background-color: #161920;
 }
 
 /* Sidebar navigation */
 [data-testid="stSidebarNav"] {
-    background-color: #1a1d24;
+    background-color: #161920;
 }
 
 [data-testid="stSidebarNav"] > ul {
-    background-color: #1a1d24;
+    background-color: #161920;
 }
 
 [data-testid="stSidebarNav"] > ul > li {
-    background-color: #1a1d24;
+    background-color: #161920;
 }
 
 [data-testid="stSidebarNav"] > ul > li > div {
-    background-color: #1a1d24;
+    background-color: #161920;
+}
+
+/* Radio button in sidebar */
+[data-testid="stSidebar"] [role="radiogroup"] > label {
+    background-color: #161920;
+    color: #e0e0e0;
+}
+
+[data-testid="stSidebar"] [role="radiogroup"] > label:hover {
+    background-color: #1e222b;
+}
+
+[data-testid="stSidebar"] [role="radiogroup"] > label > div {
+    background-color: #161920;
 }
 
 /* Headers */
 h1, h2, h3 {
     color: #ffffff;
     font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
 }
 
 /* Text */
 .stMarkdown {
-    color: #e0e0e0;
+    color: #d1d5db;
 }
 
 /* Metrics */
 [data-testid="stMetricValue"] {
     color: #00d4ff;
     font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
 }
 
 [data-testid="stMetricLabel"] {
-    color: #a0a0a0;
+    color: #9ca3af;
 }
 
 /* Dataframes */
 .stDataFrame {
-    background-color: #1a1d24;
-    color: #e0e0e0;
+    background-color: #161920;
+    color: #d1d5db;
 }
 
 /* Buttons */
 .stButton > button {
     background-color: #00d4ff;
-    color: #0e1117;
+    color: #0f1115;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     font-weight: 600;
+    padding: 0.5rem 1rem;
 }
 
 .stButton > button:hover {
@@ -74,46 +91,55 @@ h1, h2, h3 {
 
 /* Selectbox */
 [data-testid="stSelectbox"] > div > div {
-    background-color: #1a1d24;
-    color: #e0e0e0;
+    background-color: #161920;
+    color: #d1d5db;
 }
 
 /* Input */
 [data-testid="stTextInput"] > div > div > input {
-    background-color: #1a1d24;
-    color: #e0e0e0;
+    background-color: #161920;
+    color: #d1d5db;
 }
 
 /* Plotly charts */
 .js-plotly-plot {
-    background-color: #1a1d24;
+    background-color: #161920;
 }
 
 /* Streamlit default text color */
 p {
-    color: #e0e0e0;
+    color: #d1d5db;
 }
 
 /* Success message */
 .stSuccess {
-    background-color: #1a1d24;
-    color: #00ff88;
+    background-color: #1a2e1a;
+    color: #4ade80;
+    border: 1px solid #22c55e;
 }
 
 /* Info message */
 .stInfo {
-    background-color: #1a1d24;
-    color: #00d4ff;
+    background-color: #1a2e3a;
+    color: #38bdf8;
+    border: 1px solid #0ea5e9;
 }
 
 /* Warning message */
 .stWarning {
-    background-color: #1a1d24;
-    color: #ffaa00;
+    background-color: #2e2a1a;
+    color: #fbbf24;
+    border: 1px solid #f59e0b;
 }
 
 /* Error message */
 .stError {
-    background-color: #1a1d24;
-    color: #ff4444;
+    background-color: #2e1a1a;
+    color: #f87171;
+    border: 1px solid #ef4444;
+}
+
+/* Divider */
+hr {
+    border-color: #2a2e36;
 }

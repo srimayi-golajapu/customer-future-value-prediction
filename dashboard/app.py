@@ -10,6 +10,9 @@ from pathlib import Path
 # Add src to path
 sys.path.append(str(Path(__file__).parent.parent / 'src'))
 
+# Import page functions
+from pages import overview, customer_explorer, prediction_explanation, customer_segmentation, model_performance
+
 
 def main():
     # Page configuration
@@ -30,22 +33,25 @@ def main():
     st.sidebar.markdown("---")
 
     # Page navigation
-    PAGES = {
-        "Overview": "pages.1_Overview",
-        "Customer Explorer": "pages.2_Customer_Explorer",
-        "Prediction Explanation": "pages.3_Prediction_Explanation",
-        "Customer Segmentation": "pages.4_Customer_Segmentation",
-        "Model Performance": "pages.5_Model_Performance"
-    }
-
-    selection = st.sidebar.radio("Navigate to:", list(PAGES.keys()))
+    page = st.sidebar.radio("Navigate to:", [
+        "Overview",
+        "Customer Explorer",
+        "Prediction Explanation",
+        "Customer Segmentation",
+        "Model Performance"
+    ])
 
     # Load selected page
-    try:
-        page_module = __import__(PAGES[selection], fromlist=['main'])
-        page_module.main()
-    except Exception as e:
-        st.error(f"Error loading page: {e}")
+    if page == "Overview":
+        overview.show()
+    elif page == "Customer Explorer":
+        customer_explorer.show()
+    elif page == "Prediction Explanation":
+        prediction_explanation.show()
+    elif page == "Customer Segmentation":
+        customer_segmentation.show()
+    elif page == "Model Performance":
+        model_performance.show()
 
     # Footer
     st.sidebar.markdown("---")
