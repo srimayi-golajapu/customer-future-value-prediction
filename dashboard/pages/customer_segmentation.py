@@ -20,15 +20,32 @@ def show():
     st.title("👥 Customer Segmentation")
     st.markdown("---")
     
-    # Load data
-    @st.cache_data
-    def load_data():
-        processed_dir = get_processed_data_dir()
-        segments_df = pd.read_csv(processed_dir / 'customer_segments.csv')
-        segment_stats = pd.read_csv(processed_dir / 'segment_statistics.csv', index_col=0)
-        return segments_df, segment_stats
-    
-    segments_df, segment_stats = load_data()
+    # Check if uploaded data exists
+    if 'uploaded_predictions' in st.session_state:
+        segments_df = st.session_state['uploaded_predictions']
+        st.info("📊 Viewing predictions for your uploaded data")
+        
+        # Calculate segment statistics dynamically
+        segment_stats = segments_df.groupby('segment').agg({
+            'predicted_future_revenue': ['mean', 'median', 'sum'],
+            'total_revenue': 'mean',
+            'recency': 'mean',
+            'cancellation_rate': 'mean',
+            'customerid': 'count'
+        }).round(2)
+        segment_stats.columns = ['Avg Predicted Revenue', 'Median Predicted Revenue', 
+                               'Total Predicted Revenue', 'Avg Historical Revenue',
+                               'Avg Recency', 'Avg Cancellation Rate', 'Count']
+    else:
+        # Load static data
+        @st.cache_data
+        def load_data():
+            processed_dir = get_processed_data_dir()
+            segments_df = pd.read_csv(processed_dir / 'customer_segments.csv')
+            segment_stats = pd.read_csv(processed_dir / 'segment_statistics.csv', index_col=0)
+            return segments_df, segment_stats
+        
+        segments_df, segment_stats = load_data()
     
     # Segment distribution
     st.subheader("Segment Distribution")

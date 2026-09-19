@@ -11,7 +11,7 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent / 'src'))
 
 # Import page functions
-from pages import overview, customer_explorer, prediction_explanation, customer_segmentation, model_performance
+from pages import overview, customer_explorer, prediction_explanation, customer_segmentation, model_performance, upload_data
 
 
 def main():
@@ -34,6 +34,7 @@ def main():
 
     # Page navigation
     page = st.sidebar.radio("Navigate to:", [
+        "Upload Data",
         "Overview",
         "Customer Explorer",
         "Prediction Explanation",
@@ -42,7 +43,9 @@ def main():
     ])
 
     # Load selected page
-    if page == "Overview":
+    if page == "Upload Data":
+        upload_data.show()
+    elif page == "Overview":
         overview.show()
     elif page == "Customer Explorer":
         customer_explorer.show()

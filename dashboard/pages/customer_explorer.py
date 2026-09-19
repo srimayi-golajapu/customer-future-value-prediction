@@ -20,14 +20,19 @@ def show():
     st.title("🔍 Customer Explorer")
     st.markdown("---")
     
-    # Load data
-    @st.cache_data
-    def load_data():
-        processed_dir = get_processed_data_dir()
-        segments_df = pd.read_csv(processed_dir / 'customer_segments.csv')
-        return segments_df
-    
-    segments_df = load_data()
+    # Check if uploaded data exists
+    if 'uploaded_predictions' in st.session_state:
+        segments_df = st.session_state['uploaded_predictions']
+        st.info("📊 Viewing predictions for your uploaded data")
+    else:
+        # Load static data
+        @st.cache_data
+        def load_data():
+            processed_dir = get_processed_data_dir()
+            segments_df = pd.read_csv(processed_dir / 'customer_segments.csv')
+            return segments_df
+        
+        segments_df = load_data()
     
     # Customer selection
     st.subheader("Select Customer")
