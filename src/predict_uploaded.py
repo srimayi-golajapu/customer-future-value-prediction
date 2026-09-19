@@ -218,9 +218,15 @@ def predict_uploaded_data(customer_features):
     models_dir = get_models_dir()
     model = joblib.load(models_dir / 'xgboost_model.pkl')
     
+    # Add missing columns that the model expects (leakage features from training)
+    # These will be set to 0 for uploaded data
+    if 'future_6_month_orders' not in customer_features.columns:
+        customer_features['future_6_month_orders'] = 0
+    
     # Prepare features
     id_col = 'customerid'
-    feature_cols = [col for col in customer_features.columns if col != id_col]
+    target_col = 'predicted_future_revenue'
+    feature_cols = [col for col in customer_features.columns if col not in [id_col, target_col]]
     
     X = customer_features[feature_cols].copy()
     
